@@ -5,7 +5,7 @@ import HeroSection from '../components/Herosection';
 // import AboutSection from '../components/AboutSection';
 // import ProjectsSection from '../components/ProjectsSection';
 // import ContactSection from '../components/ContactSection';
-// import Footer from '../components/Footer';
+import Footer from '../components/Footer';
 // import Skills from '../components/skills';
 
 export default function Home() {
@@ -16,8 +16,8 @@ export default function Home() {
       {/* <Skills/>
       <ProjectsSection />
       <AboutSection />
-      <ContactSection />
-      <Footer /> */}
+      {/* <ContactSection /> */}
+      <Footer />
     </div>
   );
 }
