@@ -6,17 +6,17 @@ import HeroSection from '../components/Herosection';
 // import ProjectsSection from '../components/ProjectsSection';
 // import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
-// import Skills from '../components/skills';
+import Skill from '../components/Skill';
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       <Navbar />
       <HeroSection />
-      {/* <Skills/>
-      <ProjectsSection />
+       <Skill/>
+      {/* <ProjectsSection />
       <AboutSection />
-      {/* <ContactSection /> */}
+       <ContactSection /> */}
       <Footer />
     </div>
   );
