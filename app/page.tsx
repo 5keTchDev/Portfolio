@@ -1,6 +1,6 @@
 'use client';
 
-// import Navbar from '../components/Navbar';
+import Navbar from '../components/Navbar';
 import HeroSection from '../components/Herosection';
 // import AboutSection from '../components/AboutSection';
 // import ProjectsSection from '../components/ProjectsSection';
@@ -11,7 +11,7 @@ import HeroSection from '../components/Herosection';
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* <Navbar /> */}
+      <Navbar />
       <HeroSection />
       {/* <Skills/>
       <ProjectsSection />
