@@ -3,7 +3,7 @@
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/Herosection';
 // import AboutSection from '../components/AboutSection';
-// import ProjectsSection from '../components/ProjectsSection';
+import ProjectsSection from '../components/ProjectSection';
 // import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 import Skill from '../components/Skill';
@@ -14,7 +14,8 @@ export default function Home() {
       <Navbar />
       <HeroSection />
        <Skill/>
-      {/* <ProjectsSection />
+       <ProjectsSection/>
+      {/* 
       <AboutSection />
        <ContactSection /> */}
       <Footer />
