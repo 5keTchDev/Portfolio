@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Geist, Geist_Mono, Pacifico } from "next/font/google";
+import './globals.css';
+
+const pacifico = Pacifico({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-pacifico',
+})
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,7 +21,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Portfolio",
-  description: "Want to Know about me",
+  description: "Want to know more about me",
+  icons: {
+  icon: "public/favicon.ico", // favicon icon (should be in /public)
+  },
 };
 
 export default function RootLayout({
@@ -23,9 +33,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+        <html lang="en">
+          <head>
+            <link
+              href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.0.0/remixicon.min.css"
+              rel="stylesheet"
+            />
+            {/* ...other meta tags... */}
+          </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${pacifico.variable} antialiased`}
       >
         {children}
       </body>
