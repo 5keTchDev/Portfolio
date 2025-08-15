@@ -6,7 +6,7 @@ import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { IoLogoStackoverflow } from "react-icons/io5";
 import { SiLeetcode } from "react-icons/si";
 import React, { useRef } from 'react';
-// import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
 
 // ContactSection component renders the contact form and contact info section
 export default function ContactSection() {
@@ -37,33 +37,25 @@ export default function ContactSection() {
     setIsSubmitting(true);
 
     // Use sendForm for React forms
-    // emailjs.sendForm(
-    //   'service_k8wiv45',
-    //   'template_s19gqos',
-    //   formRef.current!,
-    //   'HmQ6lNyJ9ee5aVPpU'
-    // ).then(() => {
-    //   setIsSubmitting(false);
-    //   setSubmitted(true);
-    //   setFormData({ name: '', email: '', subject: '', message: '' });
-    // }, (error) => {
-    //   setIsSubmitting(false);
-    //   alert('Failed to send message: ' + (error?.text || error?.message || 'Unknown error'));
-    // });
+    emailjs.sendForm(
+      'service_k8wiv45',
+      'template_s19gqos',
+      formRef.current!,
+      'HmQ6lNyJ9ee5aVPpU'
+    ).then(() => {
+      setIsSubmitting(false);
+      setSubmitted(true);
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    }, (error) => {
+      setIsSubmitting(false);
+      alert('Failed to send message: ' + (error?.text || error?.message || 'Unknown error'));
+    });
   };
 
   return (
     <div>
       {/* Section header */}
-      <div className='text-center'>
-        <div className="inline-flex items-center gap-2 bg-green-100 text-gray-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-          <div className="w-4 h-4 flex items-center justify-center">
-            <i className="ri-code-box-line"></i>
-          </div>
-          contact
-        </div>
-      </div>
-
+     
       {/* Main contact section with background image */}
       <section id="contact" className="min-h-screen flex items-center relative overflow-hidden">
         {/* Background image overlay */}
@@ -71,9 +63,18 @@ export default function ContactSection() {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-blend-color-burn"
           style={{ backgroundImage: `url('/assets/contact.jpg')` }}
         ></div>
-
+       
         {/* Main content container */}
         <div className="relative max-w-6xl mx-auto px-6 mt-4">
+        {/* heading contact */}
+        <div className='text-center relative z-10'>
+          <div className="inline-flex items-center gap-2 bg-green-100 text-gray-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <div className="w-4 h-4 flex items-center justify-center">
+              <i className="ri-code-box-line"></i>
+            </div>
+              contact
+            </div>
+        </div>
           {/* Section title and description */}
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
