@@ -1,59 +1,223 @@
 'use client';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
+import { useRouter } from "next/navigation";
+
+
 export default function AboutSection() {
+  const [isVisible, setIsVisible] = useState(false);
+  const [activeTab, setActiveTab] = useState('about');
+  // const router = useRouter();
+
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const element = document.getElementById('about');
+    if (element) {
+      observer.observe(element);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const stats = [
+    { number: '2+', label: 'Years Experience', icon: '🚀' },
+    { number: '15+', label: 'Projects Completed', icon: '💼' },
+    { number: '5+', label: 'Technologies Mastered', icon: '⚡' },
+    { number: '100%', label: 'Client Satisfaction', icon: '🎯' }
+  ];
+
+  const skills = [
+    { name: 'Frontend', level: 90, color: 'from-blue-500 to-cyan-500' },
+    { name: 'Backend', level: 85, color: 'from-green-500 to-emerald-500' },
+    { name: 'Database', level: 80, color: 'from-purple-500 to-pink-500' },
+    { name: 'DevOps', level: 75, color: 'from-orange-500 to-red-500' }
+  ];
+
   return (
-    <section id="about" className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Text Section */}
-          <div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-              About Me <span className="text-2xl">🏀</span>
-            </h2>
-            <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-              <p>
-                Hi! I m Mohit Sharma, a passionate <span className="font-semibold text-green-600">Full-Stack Developer</span> with an experience of building scalable web applications and solving complex technical challenges. My journey started with curiosity about how things work, and it has evolved into a career of creating impactful digital solutions.
-              </p>
-              <p>
-                I specialize in <span className="font-semibold text-green-600">React, Next.js, Node.js, and TypeScript</span>, and have hands-on experience with cloud technologies, database design, and UI/UX best practices. I believe in writing clean, maintainable code and collaborating effectively with cross-functional teams.
-              </p>
-              <p>
-                Beyond coding, I love exploring new tech, contributing to open source, and sharing knowledge through blog posts and mentoring. I thrive on challenges and am always eager to learn and grow.
-              </p>
+    <section id="about" className="py-12 bg-gradient-to-br from-white via-gray-50 to-green-50 relative overflow-hidden">
+      {/* Background decoration */}
+      <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-blend-color-burn"
+          style={{ backgroundImage: `url('/assets/creative.jpg')` }}
+        ></div>
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-10 left-10 w-32 h-32 bg-green-400 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 right-10 w-40 h-40 bg-blue-400 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
+        {/* Header */}
+        <div className={`text-center mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-100 to-blue-100 text-gray-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <div className="w-4 h-4 bg-gradient-to-r from-green-400 to-blue-400 rounded-full"></div>
+            About Me
+          </div>
+          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
+            Crafting Digital <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">Experiences</span>
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Passionate full-stack developer with a love for clean code and innovative solutions
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          {/* Left Column - Content */}
+          <div className={`space-y-8 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
+            
+            {/* Tab Navigation */}
+            <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg">
+              {['about', 'skills', 'stats'].map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`flex-1 py-2 px-4 rounded-md font-semibold text-sm transition-all duration-300 ${
+                    activeTab === tab
+                      ? 'bg-white text-green-600 shadow-md'
+                      : 'text-gray-600 hover:text-gray-900'
+                  }`}
+                >
+                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                </button>
+              ))}
             </div>
 
-            {/* Call to Action */}
-            <div className="mt-8">
+            {/* Tab Content */}
+            <div className="min-h-[300px]">
+              {activeTab === 'about' && (
+                <div className="space-y-6 animate-fadeIn">
+                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-100">
+                    <h3 className="text-xl font-extrabold text-gray-900 mb-0 flex items-center gap-1">
+                      <span className="text-2xl">📌</span>
+                      My Journey
+                    </h3>
+                    <div className="space-y-3 text-gray-700 leading-relaxed">
+                      <p>
+                        Hi! I'am <span className="font-bold text-green-600">M0H1T</span>, a passionate Software Engineer with an experience crafting digital solutions that make a difference.I began my journey in technology with a strong foundation in Computer Science and Engineering, where I discovered my passion for building scalable and user-centric digital solutions.
+                      </p>
+                      <p>
+                        I specialize in <span className="font-bold text-green-600">React, Next.js, Node.js, TypeScript , java, and Javscript</span>, creating scalable applications that solve real-world problems. My experience spans across developing end-to-end applications, from crafting clean and responsive user interfaces to implementing secure and efficient backends. Along the way, I have built impactful projects, each reinforcing my ability to solve complex problems through elegant technical solutions.
+                      </p>
+                      <p>    
+                        Today, I continue to push boundaries as a Software Engineer, blending creativity with technical expertise to deliver solutions that not only perform but also inspire.
+                      </p>
+                      <p>
+                        When I'm not coding, you'll find me exploring new technologies, contributing to open source, or sharing knowledge with the developer community.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {activeTab === 'skills' && (
+                <div className="space-y-6 animate-fadeIn">
+                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-100">
+                    <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                      <span className="text-2xl">⚡</span>
+                      Technical Expertise
+                    </h3>
+                    <div className="space-y-4">
+                      {skills.map((skill, index) => (
+                        <div key={skill.name} className="space-y-2">
+                          <div className="flex justify-between items-center">
+                            <span className="font-semibold text-gray-700">{skill.name}</span>
+                            <span className="text-sm text-gray-500">{skill.level}%</span>
+                          </div>
+                          <div className="w-full bg-gray-200 rounded-full h-2">
+                            <div 
+                              className={`h-2 bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out`}
+                              style={{ width: `${skill.level}%` }}
+                            ></div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {activeTab === 'stats' && (
+                <div className="grid grid-cols-2 gap-4 animate-fadeIn">
+                  {stats.map((stat, index) => (
+                    <div 
+                      key={stat.label}
+                      className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-gray-100 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                    >
+                      <div className="text-3xl mb-2">{stat.icon}</div>
+                      <div className="text-2xl font-bold text-gray-900 mb-1">{stat.number}</div>
+                      <div className="text-sm text-gray-600">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Action Buttons */}
+            {/* <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/about"
-                className="inline-flex items-center text-green-600 hover:text-green-700 font-semibold transition-colors cursor-pointer whitespace-nowrap gap-2"
+                href="/pages/Section"
+                target="_blank"
+                className="flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-all hover:shadow-lg hover:scale-105 transform"
               >
-                Learn More About Me
-                <i className="ri-arrow-right-line"></i>
+                Know More
               </Link>
-            </div>
+              <button
+                onClick={() => router.push("/Herosection")}
+                className="px-4 py-2 bg-green-600 text-white rounded-lg"
+              >
+                Go to About Page
+              </button>
+            </div> */}
           </div>
 
-          {/* Image and Experience Card */}
-          <div className="relative">
-            <div className="aspect-[2/2] rounded-2xl overflow-hidden bg-gradient-to-br from-green-400 to-gray-900 p-1 shadow-xl">
-              <img
-                src="/assets/version.jpg"
-                alt="Mohit - Software Developer"
-                className="w-full h-full object-cover object-bottom rounded-xl shadow-lg"
-              />
+          {/* Right Column - Image & Experience */}
+          <div className={`relative transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+            <div className="relative">
+              {/* Main Image */}
+              <div className="relative group">
+                <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-green-400 via-blue-500 to-purple-600 p-1 shadow-2xl">
+                  <img
+                    src="/assets/version.jpg"
+                    alt="Mohit Sharma - Full Stack Developer"
+                    className="w-full h-full object-cover object-center rounded-xl group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+                
+                {/* Floating Elements */}
+                <div className="absolute -bottom-4 -right-4 bg-white rounded-xl p-4 shadow-xl border border-gray-100">
+                  <div className="text-2xl font-bold text-gray-900">2+</div>
+                  <div className="text-sm text-gray-600">Years of</div>
+                  <div className="text-xs text-green-600 font-semibold">Experience</div>
+                </div>
+                <div className="absolute -top-4 -right-4 bg-white rounded-xl p-4 shadow-xl border border-gray-100">
+                  <div className="text-2xl font-bold text-gray-900">OPEN</div>
+                  <div className="text-2x1 text-gray">T0</div>
+                  <div className="text-2x1 font-bold text-green-600">WORK</div>
+                </div>
+              </div>
             </div>
-              <div
-                className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-6 shadow-xl border border-gray-100 flex flex-col items-center group hover:shadow-green-200 hover:-translate-y-2 hover:scale-[1.025] focus-within:shadow-green-200 focus-within:-translate-y-2 focus-within:scale-[1.025] cursor-pointer"
-                tabIndex={0}
-              >
-              <div className="text-3xl font-bold text-gray-900">2+</div>
-              <div className="text-gray-600 text-sm">Years Experience</div>
-              <div className="mt-2 text-green-600 text-xs font-semibold">Full-Stack & App </div>
-            </div>
-          </div>
+
+           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+          animation: fadeIn 0.6s ease-out;
+        }
+      `}</style>
     </section>
   );
 }
