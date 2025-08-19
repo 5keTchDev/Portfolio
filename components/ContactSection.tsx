@@ -35,6 +35,12 @@ export default function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+     .sendform{
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+      e.currentTarget,
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+     }
 
     // Use sendForm for React forms
     emailjs.sendForm(
@@ -80,7 +86,7 @@ export default function ContactSection() {
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Have a project in mind or want to collaborate? I&apos;d love to hear from you.
-              Let&apos;s create something amazing together.
+              Let's create something amazing together.
             </p>
           </div>
 
@@ -88,7 +94,7 @@ export default function ContactSection() {
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact info and social links */}
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-8">Let&apos;s Connect</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-8">Let's Connect</h3>
 
               {/* Contact details */}
               <div className="space-y-6">
