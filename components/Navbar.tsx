@@ -183,8 +183,8 @@ export default function Header() {
                 />
                 <div className="absolute inset-0 rounded-lg blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out logo-glow" />
               </div>
-              <span className="hidden sm:inline-block font-bold text-lg bg-gradient-to-r from-white via-green-200 to-green-400 bg-clip-text text-transparent transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform group-hover:scale-105 gradient-anim">
-                Portfolio
+              <span className="hidden sm:inline-block font-extrabold text-lg bg-gradient-to-r from-white via-green-200 to-green-400 bg-clip-text text-transparent transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform group-hover:scale-105 gradient-anim">
+                M0H1T's Portfolio
               </span>
             </Link>
 
