@@ -1,8 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Personal Portfolio Website
 
-## Getting Started
+This is a **modern portfolio website** built with [Next.js](https://nextjs.org) and TypeScript to showcase projects, skills, and experience. The site is designed to be responsive, fast, and SEO-friendly, making it ideal for professional presentation.  
 
-First, run the development server:
+---
+
+## ✨ Features
+
+- ⚡ **Next.js 14 with App Router** – optimized for performance and scalability  
+- 🎨 **Tailwind CSS / Custom Styling** – responsive design for all devices  
+- 📂 **Modular Components** – clean, reusable UI components (`HeroSection`, `AboutSection`, `Projects`, `Skills`, etc.)  
+- 🖼️ **Optimized Assets** – images served from `public/` with Next.js Image optimization  
+- 📧 **Contact Form** with [EmailJS](https://www.emailjs.com/) integration (configurable via environment variables)  
+- 🌙 **Lightweight & Fast** – ideal for personal branding and professional use  
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)  
+- **Language**: TypeScript  
+- **Styling**: Tailwind CSS (or global CSS, depending on your config)  
+- **Email Service**: EmailJS  
+- **Deployment**: [Vercel](https://vercel.com)  
+
+---
+
+## 📂 Project Structure
+
+```
+portfolio/
+ ├── app/                 # Next.js app router pages
+ │   ├── globals.css      # Global styles
+ │   ├── layout.tsx       # Root layout
+ │   ├── page.tsx         # Homepage entry
+ │   └── not-found.tsx    # 404 page
+ │
+ ├── components/          # Reusable UI sections
+ │   ├── HeroSection.tsx
+ │   ├── AboutSection.tsx
+ │   ├── ProjectSection.tsx
+ │   ├── Skill.tsx
+ │   ├── ContactSection.tsx
+ │   ├── Navbar.tsx
+ │   └── Footer.tsx
+ │
+ ├── public/              # Static assets
+ │   ├── assets/
+ │   ├── favicon.ico
+ │   └── images
+ │
+ ├── node_modules/
+ └── README.md
+```
+
+---
+
+## ⚙️ Getting Started
+
+First, install dependencies:  
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
+
+Run the development server:  
 
 ```bash
 npm run dev
@@ -14,23 +81,45 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔑 Environment Variables
 
-## Learn More
+For the contact form (EmailJS integration), create a `.env.local` file in the root directory:  
 
-To learn more about Next.js, take a look at the following resources:
+```env
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚀 Deployment
 
-## Deploy on Vercel
+This project is deployed with [Vercel](https://vercel.com).  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push your code to GitHub/GitLab/Bitbucket.  
+2. Import the repository to [Vercel](https://vercel.com/new).  
+3. Set environment variables in **Vercel → Project Settings → Environment Variables**.  
+4. Deploy 🎉  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For more details, check the [Next.js Deployment Docs](https://nextjs.org/docs/app/building-your-application/deploying).  
+
+---
+
+## 📖 Learn More
+
+- [Next.js Documentation](https://nextjs.org/docs) – official docs  
+- [Learn Next.js](https://nextjs.org/learn) – interactive tutorial  
+- [Vercel Deployment Guide](https://vercel.com/docs)  
+
+---
+
+## 👨‍💻 Author
+
+Developed with ❤️ by **M0H1T**  
+📧 Reach me at: Sharma18mohit2018@gmail.com  
+🌐 Portfolio: https://m0hit-portf0li0.vercel.app  
