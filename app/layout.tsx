@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   title: "Portfolio",
   description: "Want to know more about me",
   icons: {
-  icon: "public/favicon.ico", // favicon icon (should be in /public)
+    icon: "/assets/cube.png", // favicon icon (should be in /public)
   },
 };
 
@@ -40,6 +40,7 @@ export default function RootLayout({
               rel="stylesheet"
             />
             {/* ...other meta tags... */}
+            {/* Do not add a <link rel='icon'> here, let Next.js handle it via metadata */}
           </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${pacifico.variable} antialiased`}
