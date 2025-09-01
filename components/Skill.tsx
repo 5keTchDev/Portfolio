@@ -1,35 +1,32 @@
 'use client';
 
 import Image from 'next/image';
-
-
-
 export default function skill() {
   const skill = [
+    { name: 'HTML5', image: '/assets/skills/html5.svg' },
+    { name: 'CSS3', image: '/assets/skills/css3.svg' },
     { name: 'JavaScript', image: '/assets/skills/js.svg' },
     { name: 'React', image: '/assets/skills/react.svg' },
     { name: 'Next.js', image: '/assets/skills/nextjs.svg' },
     { name: 'Node.js', image: '/assets/skills/nodejs.svg' },
-    { name: 'npm', image: '/assets/skills/npm.svg' },
+    { name: 'Npm', image: '/assets/skills/npm.svg' },
     { name: 'MongoDB', image: '/assets/skills/mongodb.svg' },
     { name: 'Tailwind ', image: '/assets/skills/tailwind.svg' },
-    { name: 'Git', image: '/assets/skills/git.svg' },
+    { name: 'Svelte', image: '/assets/skills/svelte.svg' },
+    { name: 'Threejs', image: '/assets/skills/threejs.svg' },
+    { name: 'Redux', image: '/assets/skills/redux.svg' },
+    { name: 'Webpack', image: '/assets/skills/webpack.svg' },
     { name: 'GraphQL', image: '/assets/skills/graphql.svg' },
-    { name: 'Firebase', image: '/assets/skills/firebase.svg' },
+    { name: 'Git', image: '/assets/skills/git.svg' },
     { name: 'PostgreSQL', image: '/assets/skills/postgresql.svg' },
-    { name: 'HTML5', image: '/assets/skills/html5.svg' },
-    { name: 'CSS3', image: '/assets/skills/css3.svg' },
     { name: 'Python', image: '/assets/skills/python.svg' },
     { name: 'Java', image: '/assets/skills/java.svg' },
-    { name: 'Flutter', image: '/assets/skills/flutter.svg' },
-    { name: 'Linux', image: '/assets/skills/linux.svg' },
     { name: 'Spring', image: '/assets/skills/spring.svg' },
+    { name: 'Flutter', image: '/assets/skills/flutter.svg' },
+    { name: 'Firebase', image: '/assets/skills/firebase.svg' },
+    { name: 'Linux', image: '/assets/skills/linux.svg' },
     { name: 'Figma', image: '/assets/skills/figma.svg' },
-    { name: 'svelte', image: '/assets/skills/svelte.svg' },
-    { name: 'redux', image: '/assets/skills/redux.svg' },
-    { name: 'webpack', image: '/assets/skills/webpack.svg' },
-    { name: 'threejs', image: '/assets/skills/threejs.svg' },
-    { name: 'vscode', image: '/assets/skills/vscode.svg' },
+    { name: 'VScode', image: '/assets/skills/vscode.svg' },
 
   ];
 

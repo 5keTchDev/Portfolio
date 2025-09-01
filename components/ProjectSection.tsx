@@ -1,50 +1,52 @@
 'use client';
+import Image from 'next/image';
+import { BiCategory } from 'react-icons/bi';
 
 export default function ProjectsSection() {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with React, Node.js, and MongoDB. Features include user authentication, payment processing, and admin dashboard.",
-      tech: ["React", "Node.js", "MongoDB", "Stripe"],
-      image: "Modern e-commerce website interface showing product catalog clean design shopping cart functionality professional web application layout green and white color scheme",
-      github: "#",
-      live: "#",
+      title: "Grocery Delivery Platform",
+      description: "Realtime Grocery Delivery Application is a cross-platform application built with Flutter that enables users to order groceries and track their deliveries in real-time. The app offers an intuitive and seamless experience, ensuring users can shop from the comfort of their homes and receive their orders quickly.",
+      tech: ["Flutter", "Dart", "Node.js", "Firebase", "Mongodb","Express.js", "Scoket.io"],
+      image: "/Store.png",
+      github: "https://github.com/5keTchDev/RealTime-Grocery-Delivery-System",
+      live: "--",
       status: "Live",
-      category: "Full Stack"
+      category: "Full Stack",
     },
     {
       id: 2,
-      title: "Task Management App",
-      description: "Collaborative task management application with real-time updates, team collaboration features, and advanced filtering options.",
+      title: "Happy Token App",
+      description: "Collaborative application which is used to create customized tokens for an specific use,need or requirent so, that they can be redem later.",
       tech: ["Next.js", "TypeScript", "PostgreSQL", "Socket.io"],
-      image: "Task management dashboard interface showing kanban board project timeline team collaboration tools modern UI design clean layout productivity app green accent colors",
-      github: "#",
-      live: "#",
-      status: "In Development",
-      category: "Web App"
+      image: "/astronaut.jpg",
+      github: "https://github.com/5keTchDev/",
+      live: "",
+      status: "Developed",
+      category: "Cross Platfrom App"
     },
     {
       id: 3,
-      title: "Analytics Dashboard",
+      title: "Caffe Management System",
       description: "Real-time analytics dashboard for tracking user behavior and business metrics with interactive charts and reporting features.",
       tech: ["React", "D3.js", "Python", "FastAPI"],
-      image: "Analytics dashboard showing colorful charts graphs data visualization modern interface dark theme professional business intelligence tool clean design green highlights",
+      image: "/Caffe.png",
       github: "#",
       live: "#",
-      status: "Live",
-      category: "Data Visualization"
+      status: "In Development",
+      category: "backend api"
     },
     {
       id: 4,
-      title: "Social Media API",
-      description: "RESTful API for social media platform with user management, post creation, and real-time messaging capabilities.",
-      tech: ["Node.js", "Express", "Redis", "JWT"],
-      image: "API documentation interface showing endpoints code examples developer tools clean technical documentation modern design professional layout green theme",
+      title: "Flappy Bird Game",
+      description: "The goal of the game is to navigate the bird through a series of pipes without colliding with them. It is a fun and addictive game that challenges your reflexes and timing..",
+      tech: ["HTML", "CSS", "Javascript", "JWT"],
+      image: "/Flappy.png",
       github: "#",
       live: "#",
       status: "Complete",
-      category: "Backend API"
+      // category: "web Game"
     }
   ];
 
@@ -57,12 +59,15 @@ export default function ProjectsSection() {
       case 'Complete':
         return 'bg-blue-100 text-blue-800';
       default:
+        
         return 'bg-gray-100 text-gray-800';
     }
   };
 
   return (
-    <section id="projects" className="py-20 bg-gray-50">
+    <div>
+      <section id="projects" className="py-20 bg-gray-50">
+        
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-green-100 text-gray-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
@@ -83,9 +88,11 @@ export default function ProjectsSection() {
           <div className="group bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-green-200 transform hover:-translate-y-2">
             <div className="lg:grid lg:grid-cols-2 lg:gap-0">
               <div className="lg:order-2 aspect-[4/3] lg:aspect-auto bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden relative">
-                <img 
-                  src={`https://readdy.ai/api/search-image?query=$%7Bprojects%5B0%5D.image%7D&width=800&height=600&seq=project-${projects[0].id}&orientation=landscape`}
+                <Image 
+                  src={projects[0].image}
                   alt={projects[0].title}
+                  width={800}
+                  height={500}
                   className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute top-6 left-6 flex gap-3">
@@ -155,9 +162,11 @@ export default function ProjectsSection() {
                 className="group bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-green-200 transform hover:-translate-y-2"
               >
                 <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden relative">
-                  <img 
-                    src={`https://readdy.ai/api/search-image?query=$%7Bproject.image%7D&width=600&height=400&seq=project-${project.id}&orientation=landscape`}
+                  <Image 
+                    src={project.image}
                     alt={project.title}
+                    width={800}
+                    height={600}
                     className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute top-4 left-4 flex gap-2">
@@ -234,16 +243,18 @@ export default function ProjectsSection() {
                 </div>
                 View All Projects
               </button>
-              <button className="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-8 py-4 rounded-full font-semibold transition-all whitespace-nowrap cursor-pointer hover:scale-105 transform flex items-center gap-3 justify-center">
+              {/* <button className="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-8 py-4 rounded-full font-semibold transition-all whitespace-nowrap cursor-pointer hover:scale-105 transform flex items-center gap-3 justify-center">
                 <div className="w-5 h-5 flex items-center justify-center">
                   <i className="ri-download-line text-xl"></i>
                 </div>
                 Download Resume
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
       </div>
     </section>
+    </div>
+    
   );
 }
