@@ -1,6 +1,6 @@
 'use client';
-
 import Image from 'next/image';
+import 'animate.css';
 export default function skill() {
   const skill = [
     { name: 'HTML5', image: '/assets/skills/html5.svg' },
@@ -13,7 +13,7 @@ export default function skill() {
     { name: 'MongoDB', image: '/assets/skills/mongodb.svg' },
     { name: 'Tailwind ', image: '/assets/skills/tailwind.svg' },
     { name: 'Svelte', image: '/assets/skills/svelte.svg' },
-    { name: 'Threejs', image: '/assets/skills/threejs.svg' },
+    // { name: 'Threejs', image: '/assets/skills/threejs.svg' },
     { name: 'Redux', image: '/assets/skills/redux.svg' },
     { name: 'Webpack', image: '/assets/skills/webpack.svg' },
     { name: 'GraphQL', image: '/assets/skills/graphql.svg' },
@@ -31,16 +31,13 @@ export default function skill() {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-gray-50">
+    <section id="skills" className="py-10 bg-gray-100">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-green-100 text-gray-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            <div className="w-4 h-4 flex items-center justify-center">
-              <i className="ri-code-box-line"></i>
-            </div>
-            My skills
+        <div className="text-center mb-2">
+          <div className="inline-flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-2xl text-sm font-bold mb-4">
+            My Skills
           </div>
-          <h2 className="text-5xl font-black text-gray-900 mb-6">Technical Skills 📒</h2>
+          <h2 className="text-5xl font-extrabold text-gray-900 mb-6 animate__animated animate__swing animate__delay-2s animate__slower animate__infinite">Skills</h2>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-10" >
             {skill.map((skill) => (
@@ -58,7 +55,7 @@ export default function skill() {
                         className="rounded-lg"
                     />
                   </div>
-                  <p className="text-black-700  font-extrabold group-hover:text-green-600">
+                  <p className="text-black font-extrabold font-mono group-hover:text-green-600">
                     {skill.name}
                   </p>
                 </div>

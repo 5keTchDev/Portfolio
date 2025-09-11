@@ -1,15 +1,8 @@
 'use client';
-import Link from 'next/link';
 import { useState, useEffect } from 'react';
-// import { useRouter } from "next/navigation";
-
-
 export default function AboutSection() {
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState('about');
-  // const router = useRouter();
-
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -29,17 +22,24 @@ export default function AboutSection() {
   }, []);
 
   const stats = [
-    { number: '2+', label: 'Years Experience', icon: '🚀' },
-    { number: '15+', label: 'Projects Completed', icon: '💼' },
-    { number: '5+', label: 'Technologies Mastered', icon: '⚡' },
-    { number: '100%', label: 'Client Satisfaction', icon: '🎯' }
+     { number: '2+', label: 'Years Experience', icon: (<span className="text-green-500 text-3xl animate-bounce">🏗️</span>) },
+    { number: '15+', label: 'Projects Completed', icon: (<span className="text-blue-500 text-3xl animate-pulse">📈</span>) },
+    { number: '5+', label: 'Technologies Mastered', icon: (<span className="text-purple-500 text-3xl animate-spin">🖥️</span>) },
+    { number: '100%', label: 'Client Satisfaction', icon: (<span className="text-pink-500 text-3xl animate-bounce">🎯</span>) },
+    { number: '100%', label: 'Product Quality', icon: (<span className="text-yellow-500 text-3xl animate-pulse">📟</span>) },
+    { number: '100%', label: 'Trust', icon: (<span className="text-cyan-500 text-3xl animate-spin">📱</span>) }
+
+
+
   ];
 
   const skills = [
-    { name: 'Frontend', level: 90, color: 'from-blue-500 to-cyan-500' },
-    { name: 'Backend', level: 85, color: 'from-green-500 to-emerald-500' },
-    { name: 'Database', level: 80, color: 'from-purple-500 to-pink-500' },
-    { name: 'DevOps', level: 75, color: 'from-orange-500 to-red-500' }
+    { name: 'Frontend', level: 95, color: 'from-blue-500 to-cyan-500' },
+    { name: 'Backend', level: 80, color: 'from-green-500 to-emerald-500' },
+    { name: 'App Devloopment', level: 80, color: 'from-purple-500 to-pink-500' },
+    { name: 'DevOps', level: 25, color: 'from-orange-500 to-red-500' },
+    { name: 'Blockchain', level: 75, color: 'from-grey-500 to-red-500' },
+    { name: 'AI', level: 55, color: 'from-white-500 to-green-500' }
   ];
 
   return (
@@ -57,15 +57,15 @@ export default function AboutSection() {
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         {/* Header */}
         <div className={`text-center mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-100 to-blue-100 text-gray-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            <div className="w-4 h-4 bg-gradient-to-r from-green-400 to-blue-400 rounded-full"></div>
-            About Me
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-100 to-blue-100 text-gray-800 px-6 py-3 rounded-full text-base font-bold mb-4 shadow-md">
+            <div className="w-5 h-5 bg-gradient-to-r from-green-400 to-blue-400 rounded-full animate-pulse"></div>
+            🈳️  祝  About Me
           </div>
           <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
             Crafting Digital <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">Experiences</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Passionate full-stack developer with a love for clean code and innovative solutions
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto font-serif">
+            Passionate full-stack developer with a love for clean code, creative UI, and innovative solutions.
           </p>
         </div>
 
@@ -74,15 +74,15 @@ export default function AboutSection() {
           <div className={`space-y-8 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
             
             {/* Tab Navigation */}
-            <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg">
+            <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg shadow-inner">
               {['about', 'skills', 'stats'].map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`flex-1 py-2 px-4 rounded-md font-semibold text-sm transition-all duration-300 ${
+                  className={`flex-1 py-2 px-4 rounded-md  font-extrabold text-4x1 transition-all duration-300 ${
                     activeTab === tab
-                      ? 'bg-white text-green-600 shadow-md'
-                      : 'text-gray-600 hover:text-gray-900'
+                      ? 'bg-gradient-to-r from-green-400 to-blue-400 text-white shadow-lg scale-105'
+                      : 'text-gray-700 hover:text-green-600'
                   }`}
                 >
                   {tab.charAt(0).toUpperCase() + tab.slice(1)}
@@ -93,18 +93,18 @@ export default function AboutSection() {
             {/* Tab Content */}
             <div className="min-h-[300px]">
               {activeTab === 'about' && (
-                <div className="space-y-6 animate-fadeIn">
-                  <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-100">
-                    <h3 className="text-xl font-extrabold text-gray-900 mb-0 flex items-center gap-1">
-                      <span className="text-2xl">📌</span>
-                      My Journey
+                <div className="space-y-4 animate-fadeIn">
+                  <div className="bg-white/80 backdrop-blur-xl rounded-2xl p-7 shadow-lg border border-gray-100 transition-transform  duration-500 hover:scale-[1.01]">
+                    <h3 className="text-3xl font-extrabold  text-gray-900 mb-1.5 flex items-center gap-2 animate">
+                      <span className="text-3xl text-black font-extrabold">𒄆</span>
+                      MY JOURNEY
                     </h3>
-                    <div className="space-y-3 text-gray-700 leading-relaxed">
+                    <div className=" text-gray-700 font-mono space-y-3 ">
                       <p>
                         Hi! I'am <span className="font-bold text-green-600">M0H1T</span>, a passionate Software Engineer with an experience crafting digital solutions that make a difference.I began my journey in technology with a strong foundation in Computer Science and Engineering, where I discovered my passion for building scalable and user-centric digital solutions.
                       </p>
                       <p>
-                        I specialize in <span className="font-bold text-green-600">React, Next.js, Node.js, TypeScript , java, and Javscript</span>, creating scalable applications that solve real-world problems. My experience spans across developing end-to-end applications, from crafting clean and responsive user interfaces to implementing secure and efficient backends. Along the way, I have built impactful projects, each reinforcing my ability to solve complex problems through elegant technical solutions.
+                         My experience spans across developing end-to-end applications, from crafting clean and responsive user interfaces to implementing secure and efficient backends. Along the way, I have built impactful projects, each reinforcing my ability to solve complex problems through elegant technical solutions.
                       </p>
                       <p>    
                         Today, I continue to push boundaries as a Software Engineer, blending creativity with technical expertise to deliver solutions that not only perform but also inspire.
@@ -122,7 +122,7 @@ export default function AboutSection() {
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-100">
                     <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
                       <span className="text-2xl">⚡</span>
-                      Technical Expertise
+                      TECHNICAL EXPERTISE
                     </h3>
                     <div className="space-y-4">
                       {skills.map((skill, index) => (
@@ -159,36 +159,22 @@ export default function AboutSection() {
                 </div>
               )}
             </div>
-
-            {/* Action Buttons */}
-            {/* <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/pages/Section"
-                target="_blank"
-                className="flex items-center justify-center gap-2 bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-all hover:shadow-lg hover:scale-105 transform"
-              >
-                Know More
-              </Link>
-              <button
-                onClick={() => router.push("/Herosection")}
-                className="px-4 py-2 bg-green-600 text-white rounded-lg"
-              >
-                Go to About Page
-              </button>
-            </div> */}
           </div>
 
           {/* Right Column - Image & Experience */}
           <div className={`relative transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
             <div className="relative">
               {/* Main Image */}
-              <div className="relative group">
+              <div className="relative bg-blend-color-burn ">
                 <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-green-400 via-blue-500 to-purple-600 p-1 shadow-2xl">
-                  <img
-                    src="/assets/version.jpg"
-                    alt="Mohit Sharma - Full Stack Developer"
-                    className="w-full h-full object-cover object-center rounded-xl group-hover:scale-105 transition-transform duration-700"
-                  />
+                  <div className="relative w-full h-full flex items-center justify-center">
+                    <img
+                      src="/gemini.png"
+                      alt="Mohit Sharma - Full Stack Developer"
+                      className="w-full h-full object-cover object-center rounded-xl group-hover:scale-105 transition-transform duration-700 shadow-xl"
+                      style={{ boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)' }}
+                    />
+                  </div>
                 </div>
                 
                 {/* Floating Elements */}
@@ -199,7 +185,7 @@ export default function AboutSection() {
                 </div>
                 <div className="absolute -top-4 -right-4 bg-white rounded-xl p-4 shadow-xl border border-gray-100">
                   <div className="text-2xl font-bold text-gray-900">OPEN</div>
-                  <div className="text-2x1 text-gray">T0</div>
+                  <div className="text-2x1 text-black">TO</div>
                   <div className="text-2x1 font-bold text-green-600">WORK</div>
                 </div>
               </div>

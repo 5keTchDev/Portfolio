@@ -1,9 +1,9 @@
 'use client';
-
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
+import { HyperText } from "@/components/magicui/hyper-text";
 
 export default function Header() {
   // UI state
@@ -12,22 +12,22 @@ export default function Header() {
   const [currentSection, setCurrentSection] = useState<'home' | 'skills' | 'projects' | 'about' | 'contact'>('home');
   const [scrollProgress, setScrollProgress] = useState(0);
   const pathname = usePathname();
-
   // Refs
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   // Navigation model (future-proof: supports both anchors and page routes)
-  const navItems: Array<{ name: string; href: string; section?: 'home' | 'skills' | 'projects' | 'about' | 'contact' }> = [
-    { name: '🏛 Home', href: '/', section: 'home' },
-    { name: '📌 Skills', href: '#skills', section: 'skills' },
-    { name: '📚 Projects', href: '#projects', section: 'projects' },
-    { name: '📢 About', href: '#about', section: 'about' },
-    { name: '📮 Contact', href: '#contact', section: 'contact' },
+  const navItems: Array<{ name: string;  href: string;   section?: 'home' | 'skills' | 'projects' | 'about' | 'contact' | 'theme'  }> = [
+    { name: '合 HOME', href: '/', section: 'home' },
+    { name: '📌 SKILL', href: '#skills', section: 'skills' },
+    { name: '📚 PROJECT', href: '#projects', section: 'projects' },
+    { name: '📢 ABOUT', href: '#about', section: 'about' },
+    { name: '📮 CONTACT', href: '#contact', section: 'contact' },
+
   ];
 
   // Smooth scroll to anchors; navigate for page routes
-  const handleNavClick = (e: React.MouseEvent, href: string) => {
+  function handleNavClick(e: React.MouseEvent, href: string) {
     if (href.startsWith('#')) {
       e.preventDefault();
       const el = document.querySelector(href);
@@ -44,7 +44,7 @@ export default function Header() {
       setCurrentSection('home');
       setIsMenuOpen(false);
     }
-  };
+  }
 
   // Scroll listeners: navbar background + current section detection
   useEffect(() => {
@@ -177,14 +177,14 @@ export default function Header() {
                 <Image
                   src="/assets/cube.png"
                   alt="Logo"
-                  width={40}
-                  height={40}
+                  width={50}
+                  height={50}
                   className="w-10 h-10 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform group-hover:rotate-12 group-hover:scale-110 logo-float"
                 />
                 <div className="absolute inset-0 rounded-lg blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out logo-glow" />
               </div>
               <span className="hidden sm:inline-block font-extrabold text-lg bg-gradient-to-r from-white via-green-200 to-green-400 bg-clip-text text-transparent transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform group-hover:scale-105 gradient-anim">
-                M0H1T's Portfolio
+                <HyperText className='font-extrabold'>Portfolio!</HyperText>
               </span>
             </Link>
 
@@ -195,7 +195,7 @@ export default function Header() {
                   key={item.name}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className={`relative px-4 py-2 rounded-lg font-semibold whitespace-nowrap cursor-pointer transition-colors transition-transform duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] transform will-change-transform hover:scale-105 ${
+                  className={`relative px-4 py-2 rounded-lg font-extrabold font-mono whitespace-nowrap cursor-pointer transition-colors transition-transform duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] transform will-change-transform hover:scale-105 ${
                     isActive(item)
                       ? 'text-white bg-gradient-to-r from-green-600 to-emerald-500 shadow-lg shadow-green-600/30'
                       : 'text-gray-300 hover:text-green-400 hover:bg-gray-800'

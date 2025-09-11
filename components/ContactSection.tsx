@@ -57,10 +57,10 @@ export default function ContactSection() {
       {/* Section header */}
      
       {/* Main contact section with background image */}
-      <section id="contact" className="min-h-screen flex items-center relative overflow-hidden">
+      <section id="contact" className="py-10  flex items-center relative overflow-hidden">
         {/* Background image overlay */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-blend-color-burn"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat -z-10"
           style={{ backgroundImage: `url('/assets/contact.jpg')` }}
         ></div>
        
@@ -68,17 +68,14 @@ export default function ContactSection() {
         <div className="relative max-w-6xl mx-auto px-6 mt-4">
         {/* heading contact */}
         <div className='text-center relative z-10'>
-          <div className="inline-flex items-center gap-2 bg-green-100 text-gray-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            <div className="w-4 h-4 flex items-center justify-center">
-              <i className="ri-code-box-line"></i>
-            </div>
-              contact
-            </div>
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-100 to-blue-100 text-gray-800 px-6 py-3 rounded-full text-base font-bold mb-4 shadow-md">
+            🈳️ Contact
+        </div>
         </div>
           {/* Section title and description */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-5xl font-bold text-gray-900 mb-4 animate-bounce">Get In Touch</h2>
+            <p className="text-xl text-gray-700 max-w-2xl mx-auto font-serif">
               Have a project in mind or want to collaborate? I&apos;d love to hear from you.
               Let's create something amazing together.
             </p>
