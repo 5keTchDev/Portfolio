@@ -140,7 +140,8 @@ export default function ContactSection() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-               祝 Contact
+               <div className="w-5 h-5 bg-gradient-to-r from-green-400 to-blue-400 rounded-full animate-pulse">祝</div>
+                Contact
             </motion.div>
           </motion.div>
 
@@ -413,13 +414,15 @@ export default function ContactSection() {
                   </div>
 
                   {/* Submit button */}
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-green-700 hover:bg-black text-white font-extrabold  py-3  px-6 md:px-8 text-2x1 md:text-base rounded-lg transition-all transform hover:scale-105 shadow-3xl-inner whitespace-nowrap cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed font-mono"
-                  >
-                    {isSubmitting ? 'Sending...' : 'SEND MESSAGE ➜'}
-                  </button>
+                  {/* will implement coolmode here  */}
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full bg-green-700 hover:bg-black text-white font-extrabold  py-3  px-6 md:px-8 text-2x1 md:text-base rounded-lg transition-all transform hover:scale-105 shadow-3xl-inner whitespace-nowrap cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed font-mono"
+                    >
+                      {isSubmitting ? 'Sending...' : 'SEND MESSAGE ➜'}
+                    </button>
+                  
                 </form>
                 
               )}

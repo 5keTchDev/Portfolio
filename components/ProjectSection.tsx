@@ -11,7 +11,7 @@ export default function ProjectsSection() {
       title: "Realtime Grocery Delivery Platform",
       description: "Realtime Grocery Delivery Application is a cross-platform application built with Flutter that enables users to order groceries and track their deliveries in real-time. The app offers an intuitive and seamless experience, ensuring users can shop from the comfort of their homes and receive their orders quickly.",
       tech: ["Flutter", "Dart", "Node.js", "Firebase", "Mongodb","Express.js", "Scoket.io"],
-      image: "/Store.png",
+      image: "/Grow.webp",
       github: "https://github.com/5keTchDev/RealTime-Grocery-Delivery-System",
       live: "admin.sabjitaja.in/",
       status: "Live",
@@ -74,10 +74,11 @@ export default function ProjectsSection() {
           style={{ backgroundImage: "url('/assets/pages.jpg')" }}
           aria-hidden="true"
         ></div> */}
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">  
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-2xl text-sm font-bold mb-6">
-            My Work
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-100 to-blue-100 text-gray-800 px-6 py-3 rounded-full text-base font-bold mb-7 shadow-md">
+            <div className="w-5 h-5 bg-gradient-to-r from-green-400 to-blue-400 rounded-full animate-pulse">走</div>
+            MY WORK
           </div>
           <h2 className="text-5xl font-black text-gray-900 mb-3 animate__animated animate__bounce animate__delay-2s animate__slower animate__infinite">Check Out My Latest Work</h2>
           <div className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">

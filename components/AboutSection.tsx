@@ -58,8 +58,8 @@ export default function AboutSection() {
         {/* Header */}
         <div className={`text-center mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-100 to-blue-100 text-gray-800 px-6 py-3 rounded-full text-base font-bold mb-4 shadow-md">
-            <div className="w-5 h-5 bg-gradient-to-r from-green-400 to-blue-400 rounded-full animate-pulse"></div>
-             About Me
+            <div className="w-5 h-5 bg-gradient-to-r from-green-400 to-blue-400 rounded-full animate-pulse">企</div>
+             	About Me
           </div>
           <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
             Crafting Digital <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">Experiences</span>
@@ -96,12 +96,12 @@ export default function AboutSection() {
                 <div className="space-y-4 animate-fadeIn">
                   <div className="bg-white/80 backdrop-blur-xl rounded-2xl p-7 shadow-lg border border-gray-100 transition-transform  duration-500 hover:scale-[1.01]">
                     <h3 className="text-3xl font-extrabold  text-gray-900 mb-1.5 flex items-center gap-2 animate">
-                      <span className="text-3xl text-black font-extrabold">𒄆</span>
+                      <span className="text-3xl text-black font-extrabold mb-4">𒄆</span>
                       MY JOURNEY
                     </h3>
-                    <div className=" text-gray-700 font-mono space-y-3 ">
+                    <div className=" text-black font-serif text-3x1 space-y-4 leading-relaxed">
                       <p>
-                        Hi! I'am <span className="font-bold text-green-600">M0H1T</span>, a passionate Software Engineer with an experience crafting digital solutions that make a difference.I began my journey in technology with a strong foundation in Computer Science and Engineering, where I discovered my passion for building scalable and user-centric digital solutions.
+                        Hi! I'am <span className="font-bold text-xl text-green-600">MOHIT</span>, a passionate Software Engineer with an experience crafting digital solutions that make a difference.I began my journey in technology with a strong foundation in Computer Science and Engineering, where I discovered my passion for building scalable and user-centric digital solutions.
                       </p>
                       <p>
                          My experience spans across developing end-to-end applications, from crafting clean and responsive user interfaces to implementing secure and efficient backends. Along the way, I have built impactful projects, each reinforcing my ability to solve complex problems through elegant technical solutions.

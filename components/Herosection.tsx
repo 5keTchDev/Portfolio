@@ -34,7 +34,7 @@ export default function HeroSection() {
               Let's Connect!
             </button>
             </Link>
-            <Link href="https://drive.google.com/file/d/1Fytdxvo5NC9oy6VNZDl1W2DfYBIzkDnQ/view?usp=sharing" target="_blank">
+            <Link href="https://drive.google.com/file/d/1-gJjppXPt9JWIiOKo4rmaIa4T7dzsmFd/view?usp=sharing" target="_blank">
               <button className="border-3 border-white text-white hover:bg-white hover:text-gray-900 px-12 py-5 rounded-lg text-xl font-bold transition-all transform hover:scale-105 whitespace-nowrap cursor-pointer">
               Download Resume
             </button>

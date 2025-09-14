@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
 import 'animate.css';
+import { HyperText } from "@/components/magicui/hyper-text";
 export default function skill() {
   const skill = [
     { name: 'HTML5', image: '/assets/skills/html5.svg' },
@@ -34,10 +35,11 @@ export default function skill() {
     <section id="skills" className="py-10 bg-gray-100">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-2">
-          <div className="inline-flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-2xl text-sm font-bold mb-4">
-            My Skills
+         <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-100 to-blue-100 text-gray-800 px-6 py-3 rounded-full text-base font-bold mb-4 shadow-md">
+           <div className="w-5 h-5 bg-gradient-to-r from-green-400 to-blue-400 rounded-full animate-pulse">得</div>
+            SKILLS
           </div>
-          <h2 className="text-5xl font-extrabold text-gray-900 mb-6 animate__animated animate__swing animate__delay-2s animate__slower animate__infinite">Skills</h2>
+          <h2 className="text-5xl font-extrabold text-gray-900 mb-6 animate__animated animate__swing animate__delay-2s animate__slower animate__infinite">Technical Skills</h2>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-10" >
             {skill.map((skill) => (
@@ -55,9 +57,11 @@ export default function skill() {
                         className="rounded-lg"
                     />
                   </div>
-                  <p className="text-black font-extrabold font-mono group-hover:text-green-600">
-                    {skill.name}
-                  </p>
+                  <div className="text-black font-extrabold font-mono  group-hover:text-green-600">
+                    <HyperText className='text-base '>
+                      {skill.name}
+                    </HyperText> 
+                  </div>
                 </div>
               </div>
             ))}
