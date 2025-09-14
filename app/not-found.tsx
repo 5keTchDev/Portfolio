@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from 'next/image';
 
 export default function NotFound() {
   const [count, setCount] = useState(10);
@@ -58,13 +59,13 @@ export default function NotFound() {
               4
             </span>
             <span className="relative mx-2 flex items-center justify-center">
-              <img
-                src="/astronaut.jpg"
+              <Image
+               src="/astronaut.jpg"
                 alt="Astronaut"
                 width={180}
                 height={220}
-                className="object-contain"
-              />
+                className="object-contain">               
+              </Image>
             </span>
             <span className="text-[7rem] md:text-[12rem] font-extrabold text-white tracking-widest leading-none select-none" style={{letterSpacing: '0.1em'}}>
               4
