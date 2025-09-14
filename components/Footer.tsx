@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 export default function Footer() {
@@ -32,12 +31,12 @@ export default function Footer() {
           {/* Connect Section - Right */}
           <div className="flex flex-row items-center w-full md:w-auto justify-center md:justify-end">
             <h4 className="font-bold text-green-600 text-right mr-4 whitespace-nowrap">
-              Connect with me
+              Connect
             </h4>
             <div className="flex space-x-4">
               {/* GitHub */}
               <a 
-                href="https://github.com" 
+                href="https://github.com/5keTchDev" 
                 className="social-link group/icon"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -48,7 +47,7 @@ export default function Footer() {
               </a>
               {/* LinkedIn */}
               <a 
-                href="https://linkedin.com" 
+                href="www.linkedin.com/in/mohit-sharma-a66302227" 
                 className="social-link group/icon"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -59,7 +58,7 @@ export default function Footer() {
               </a>
               {/* Email */}
               <a 
-                href="mailto:alex@example.com" 
+                href="mailto:sharma18mohit2018@gmail.com" 
                 className="social-link group/icon"
               >
                 <div className="w-10 h-10 bg-black backdrop-blur-sm rounded-xl flex items-center justify-center border border-white hover:border-green-600 transition-all duration-500 hover:bg-black hover:shadow-2xl hover:shadow-green-600 transform hover:scale-125 hover:-translate-y-2 hover:rotate-3">
@@ -85,7 +84,7 @@ export default function Footer() {
         <div className="mt-10  pt-8 border-t border-gray-600">
           <div className="flex items-center justify-center text-center">
             <p className="text-sm text-gray-400 font-extrabold">
-              © {currentYear} Mohit, All rights reserved.
+              © {currentYear} M0H1T, All rights reserved.
             </p>
           </div>
         </div>
